@@ -21,7 +21,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 6}
-  m_MinSize: {x: 875, y: 542}
+  m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
   m_Maximized: 1
 --- !u!114 &2
@@ -48,7 +48,7 @@ MonoBehaviour:
   m_MinSize: {x: 677, y: 492}
   m_MaxSize: {x: 14001, y: 14042}
   vertical: 0
-  controlID: 85
+  controlID: 39
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -150,7 +150,7 @@ MonoBehaviour:
     y: 0
     width: 1920
     height: 1117
-  m_MinSize: {x: 875, y: 542}
+  m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &7
 MonoBehaviour:
@@ -219,7 +219,7 @@ MonoBehaviour:
   m_MinSize: {x: 402, y: 492}
   m_MaxSize: {x: 10001, y: 14042}
   vertical: 1
-  controlID: 86
+  controlID: 40
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -244,7 +244,7 @@ MonoBehaviour:
   m_MinSize: {x: 402, y: 221}
   m_MaxSize: {x: 8002, y: 4021}
   vertical: 0
-  controlID: 60
+  controlID: 41
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -344,7 +344,7 @@ MonoBehaviour:
   m_LastFolders:
   - Assets
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: C:\Users\mg971099\Documents\Games\Boost P2
+  m_LastProjectPath: C:\Users\mg971099\Documents\GitHub\Game_Rocket
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
@@ -502,7 +502,7 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: e8330000
+      m_SelectedIDs: 
       m_LastClickedID: 0
       m_ExpandedIDs: 6afbffffac330000
       m_RenameOverlay:
@@ -564,9 +564,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -0.09249812, y: 3.307385, z: 2.6825228}
+    m_Target: {x: -1.957988, y: -5.817673, z: 40.095028}
     speed: 2
-    m_Value: {x: -0.09249812, y: 3.307385, z: 2.6825228}
+    m_Value: {x: -1.957988, y: -5.817673, z: 40.095028}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -612,13 +612,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.094352655, y: 0.011946173, z: -0.0011322851, w: 0.99546653}
+    m_Target: {x: 0.12413837, y: -0.025300024, z: 0.003166243, w: 0.9919382}
     speed: 2
-    m_Value: {x: 0.094352655, y: 0.011946173, z: -0.0011322851, w: 0.99546653}
+    m_Value: {x: 0.124138266, y: -0.025300004, z: 0.0031662404, w: 0.99193734}
   m_Size:
-    m_Target: 5.8493047
+    m_Target: 22.672337
     speed: 2
-    m_Value: 5.8493047
+    m_Value: 22.672337
   m_Ortho:
     m_Target: 0
     speed: 2
