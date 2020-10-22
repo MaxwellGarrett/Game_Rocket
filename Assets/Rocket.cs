@@ -14,24 +14,18 @@ public class Rocket : MonoBehaviour{
 
     // Update is called once per frame
     void Update(){
-        ProcessInput();
-    }
-
-    private void ProcessInput(){
+        Rotate();
+        // GetKey applies all the time and will  report the status of  the nmed key.
         if(Input.GetKey(KeyCode.Space)){
-            // adds force to make rocket go up
-            rigidBody.AddRelativeForce(Vector3.up);
-
-            // so audio doesnt play
-            if(! audioSource.isPlaying){
-                audioSource.Play();
-            }
+            Thrust();
         }
 
         else{
             audioSource.Stop();
         }
-        
+    }
+
+    private void Rotate(){
         // rotate the ship left or right
         if(Input.GetKey(KeyCode.A)){
             // print("rotate left");
@@ -41,6 +35,16 @@ public class Rocket : MonoBehaviour{
         else if(Input.GetKey(KeyCode.D)){
             // print("rotate right");
              transform.Rotate(-Vector3.forward);
+        }
+
+        private void Thrust(){
+            // adds force to make rocket go up
+            rigidBody.AddRelativeForce(Vector3.up);
+
+            // so audio doesnt play
+            if(! audioSource.isPlaying){
+                audioSource.Play();
+            }
         }
     }
 }
