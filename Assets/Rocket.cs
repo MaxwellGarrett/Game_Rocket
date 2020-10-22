@@ -26,6 +26,8 @@ public class Rocket : MonoBehaviour{
     }
 
     private void Rotate(){
+        // freeze rotation to take manual control
+        rigidBody.freezeRotation = true;
         // rotate the ship left or right
         if(Input.GetKey(KeyCode.A)){
             // print("rotate left");
@@ -36,8 +38,10 @@ public class Rocket : MonoBehaviour{
             // print("rotate right");
              transform.Rotate(-Vector3.forward);
         }
-
-        private void Thrust(){
+        // resume physics control  
+        rigidBody. freezeRotation = false;
+    }
+    private void Thrust(){
             // adds force to make rocket go up
             rigidBody.AddRelativeForce(Vector3.up);
 
@@ -46,5 +50,4 @@ public class Rocket : MonoBehaviour{
                 audioSource.Play();
             }
         }
-    }
 }
