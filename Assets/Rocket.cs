@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Rocket : MonoBehaviour{
+    float rcsThrust = 100f;
+    
     Rigidbody rigidBody;
     AudioSource audioSource;
 
@@ -26,18 +28,22 @@ public class Rocket : MonoBehaviour{
     }
 
     private void Rotate(){
+        
+        float rotationThisFrame = rcsThrust * Time.deltaTime;
+
         // freeze rotation to take manual control
         rigidBody.freezeRotation = true;
         // rotate the ship left or right
         if(Input.GetKey(KeyCode.A)){
-            // print("rotate left");
-            transform.Rotate(Vector3.forward);
+            // rotating left about the z-axis
+            transform.Rotate(Vector3.forward * rotationThisFrame);
         }
         
         else if(Input.GetKey(KeyCode.D)){
-            // print("rotate right");
-             transform.Rotate(-Vector3.forward);
+            // rotating right about the z-axis
+             transform.Rotate(-Vector3.forward * rotationThisFrame);
         }
+
         // resume physics control  
         rigidBody. freezeRotation = false;
     }
