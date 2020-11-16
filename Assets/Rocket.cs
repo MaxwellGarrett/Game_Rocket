@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class Rocket : MonoBehaviour{
     [SerializeField] float rcsThrust = 100f;
     [SerializeField] float mainThrust = 100f;
+    [SerializeField] AudioClip mainEngine;
     
     Rigidbody rigidBody;
     AudioSource audioSource;
@@ -60,7 +61,7 @@ public class Rocket : MonoBehaviour{
                
             case "Finish":
                state = State.Transcending;
-               Invoke("LandNextScene", 1f);
+               Invoke("LoadNextScene", 1f);
                break;
 
             default:
@@ -77,8 +78,8 @@ public class Rocket : MonoBehaviour{
         }
 
             // so audio doesnt play
-            if(! audioSource.isPlaying){
-                audioSource.Play();
+            if(!audioSource.isPlaying){
+                audioSource.PlayOneShot(mainEngine);
             }
 
             else {
@@ -87,7 +88,7 @@ public class Rocket : MonoBehaviour{
         }
 
 
-        private void LandNextScene(){
+        private void LoadNextScene(){
             // todo: allow for more then 2 level 
             SceneManager.LoadScene(1);
         }
