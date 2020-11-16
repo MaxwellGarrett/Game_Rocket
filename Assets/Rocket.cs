@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Rocket : MonoBehaviour{
     [SerializeField] float rcsThrust = 100f;
@@ -8,6 +9,9 @@ public class Rocket : MonoBehaviour{
     
     Rigidbody rigidBody;
     AudioSource audioSource;
+
+    enum State { Alive, Dying, Transcending }
+    State state = State.Alive;
 
     // Start is called before the first frame update
     void Start(){
@@ -17,14 +21,10 @@ public class Rocket : MonoBehaviour{
 
     // Update is called once per frame
     void Update(){
-        Rotate();
-        // GetKey applies all the time and will  report the status of  the nmed key.
-        if(Input.GetKey(KeyCode.Space)){
+        if (state == state.Alive){
+            // only rotate and thrust when alive
+            Rotate();
             Thrust();
-        }
-
-        else{
-            audioSource.Stop();
         }
     }
 
@@ -46,18 +46,23 @@ public class Rocket : MonoBehaviour{
         }
 
         // resume physics control  
-        rigidBody. freezeRotation = false;
+        rigidBody.freezeRotation = false;
     }
 
     void OnCollisionEnter(Collision collision){
-        print("collisoin");
         switch (collision.gameObject.tag) {
             case "Friendly":
-               print("Excellent!");
+               print("Excellent");
+               break;
+               
+            case "Finish":
+               state = State.Transcending;
+               Invoke("LandNextScene", 1f);
                break;
 
             default:
                 print("Deadly");
+                SceneManager.LoadScene(0);
                 break; 
         }
     }
@@ -77,4 +82,10 @@ public class Rocket : MonoBehaviour{
                 audioSource.Stop();
             }
         }
-}
+
+
+        private void LandNextScene(){
+            // todo: allow for more then 2 level 
+            SceneManager.LoadScene(1);
+        }
+} 
