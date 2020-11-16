@@ -21,7 +21,7 @@ public class Rocket : MonoBehaviour{
 
     // Update is called once per frame
     void Update(){
-        if (state == state.Alive){
+        if (state == State.Alive){
             // only rotate and thrust when alive
             Rotate();
             Thrust();
@@ -50,6 +50,9 @@ public class Rocket : MonoBehaviour{
     }
 
     void OnCollisionEnter(Collision collision){
+        if (state != State.Alive){
+            return;
+        }
         switch (collision.gameObject.tag) {
             case "Friendly":
                print("Excellent");
