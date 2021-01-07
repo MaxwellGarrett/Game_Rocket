@@ -53,6 +53,7 @@ public class Rocket : MonoBehaviour{
         if (state != State.Alive){
             return;
         }
+        
         switch (collision.gameObject.tag) {
             case "Friendly":
                print("Excellent");
