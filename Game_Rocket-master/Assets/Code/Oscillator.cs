@@ -22,9 +22,6 @@ public class Oscillator : MonoBehaviour{
 
     // Update is called once per frame
     void Update(){
-        // protect against NAN
-        if (period == 0) {return;}
-
         float cycles = Time.time / period; 
         const float tau = Mathf.PI * 2; // about 6.28
         float rawSinWave = Mathf.Sin(cycles * tau);
